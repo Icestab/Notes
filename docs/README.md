@@ -4,12 +4,12 @@ heroImage:
 actionText: 开始阅读 →
 actionLink: /guide/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+- title: 文学随记
+  details: 也许是不知名的语句，也许是大道理般的言论，但都是我喜欢的语言。
+- title: 前端杂记
+  details: 记录学习前端途中遇到的困难，和完成的项目。
+- title: 生活杂记
+  details: 生活途中有趣的事，折腾一切事物的点点滴滴。
 footer: MIT Licensed | Copyright © 2021-present flysch
 
 ---
