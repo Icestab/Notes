@@ -2,8 +2,9 @@ name: Publish page
 
 on:
   push:
-    branches:
-      - main
+     branches: [main]
+  # 手动触发部署
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
