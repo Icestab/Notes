@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.更改盒模型 | 个人杂记</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Accept what was and what is, and you'll more positive energy to pursue what will be.">
+    
+    <link rel="preload" href="/assets/css/0.styles.992cb7aa.css" as="style"><link rel="preload" href="/assets/js/app.279e05d1.js" as="script"><link rel="preload" href="/assets/js/2.836c7019.js" as="script"><link rel="preload" href="/assets/js/9.5278cbec.js" as="script"><link rel="prefetch" href="/assets/js/3.d9ef3586.js"><link rel="prefetch" href="/assets/js/4.09fd2c39.js"><link rel="prefetch" href="/assets/js/5.fc791712.js"><link rel="prefetch" href="/assets/js/6.ffe6f60a.js"><link rel="prefetch" href="/assets/js/7.4bcf017a.js"><link rel="prefetch" href="/assets/js/8.af5e5f91.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.992cb7aa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人杂记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/html_css/1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/math/math01.html" class="nav-link">
+  文学
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/html_css/1.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/math/math01.html" class="nav-link">
+  文学
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h6 id="_1-更改盒模型"><a href="#_1-更改盒模型" class="header-anchor">#</a> 1.更改盒模型</h6> <div class="language- extra-class"><pre class="language-text"><code>*{
+    box-sizing:border-box;
+}
+</code></pre></div><p>box-sizing 属性允许您以特定的方式定义匹配某个区域的特定元素。</p> <p>例如，假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 &quot;border-box&quot;。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。</p> <h6 id="_2-生成圆"><a href="#_2-生成圆" class="header-anchor">#</a> 2.生成圆</h6> <div class="language- extra-class"><pre class="language-text"><code>{
+    width:100px;
+    height:100px;
+    border-radius:50px;or50%
+    overflow:hidden 隐藏多余部分
+}
+</code></pre></div><h6 id="_3-绝对定位"><a href="#_3-绝对定位" class="header-anchor">#</a> 3.绝对定位</h6> <div class="language- extra-class"><pre class="language-text"><code>#father{
+    position:relative;   
+}
+#fative div:first-child{
+    position:absolute;
+}
+</code></pre></div><h6 id="_4-垂直水平居中"><a href="#_4-垂直水平居中" class="header-anchor">#</a> 4.垂直水平居中</h6> <p>外围用div包裹id=wrapper</p> <div class="language- extra-class"><pre class="language-text"><code>#wrapper{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+</code></pre></div><h6 id="_5-媒体查询"><a href="#_5-媒体查询" class="header-anchor">#</a> 5.媒体查询</h6> <div class="language- extra-class"><pre class="language-text"><code>@media(max-width:500px)
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.279e05d1.js" defer></script><script src="/assets/js/2.836c7019.js" defer></script><script src="/assets/js/9.5278cbec.js" defer></script>
+  </body>
+</html>
