@@ -16,7 +16,7 @@ module.exports = {
       {
         text: '学习',
         items: [
-          { text: '前端', link: '/study/english/english01' },
+          { text: '前端', link: '/html_css/1' },
           { text: '文学', link: '/study/math/math01' },
         ]
       }
