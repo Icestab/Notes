@@ -21,5 +21,18 @@ module.exports = {
         ]
       }
     ],
+    sidebar: {
+      '/html_css/': [
+        {
+          title: '测试',
+          collapsable: false,
+          children: [
+            { title: '测试01', path: '/html_css/1' },
+            { title: '测试02', path: '/html_css/2' }
+          ]
+        }
+      ],
+    },
+    sidebarDepth: 2,
   }
 }
