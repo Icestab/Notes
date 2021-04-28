@@ -11,7 +11,17 @@ module.exports = {
     '@vuepress/search': {
       search: true, //默认false
       searchMaxSuggestions: 10 // 默认是5
-    }
+    },
+    '@vuepress/back-to-top': true,
+    '@vuepress/last-updated': true
+    // {
+    //   transformer: (timestamp, lang) => {
+    //     // 不要忘了安装 moment
+    //     const moment = require('moment')
+    //     moment.locale(lang)
+    //     return moment(timestamp).fromNow()
+    //   }
+    // }
   },
   markdown: {
     lineNumbers: true
@@ -25,19 +35,20 @@ module.exports = {
       {
         text: '学习',
         items: [
-          { text: '前端', link: '/html_css/1' },
-          { text: '文学', link: '/study/math/math01' },
+          { text: '前端', link: '/study/html_css_js/html_css' },
+          { text: '文学', link: '/study/literary/1' },
+          { text: '环境问题', link: '/study/questions/mysql_pass' },
         ]
       }
     ],
     sidebar: {
-      '/html_css/': [
+      '/study/html_css_js/': [
         {
           title: '前端',
           collapsable: false,
           children: [
-            { title: '前端小技巧', path: '/html_css/1' },
-            { title: 'vue', path: '/html_css/2' }
+            { title: '前端小技巧', path: '/study/html_css_js/html_css' },
+            { title: 'Vue', path: '/study/html_css_js/2' }
           ]
         }
       ],
