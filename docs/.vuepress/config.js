@@ -13,12 +13,15 @@ module.exports = {
       searchMaxSuggestions: 10 // 默认是5
     }
   },
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     // 添加导航栏
     nav: [
       { text: '主页', link: '/' },
       { text: '指南', link: '/guide/' },
-      { text: '生活', link: '/life/' },
+      { text: '生活', link: '/life/RM2100' },
       {
         text: '学习',
         items: [
@@ -30,14 +33,25 @@ module.exports = {
     sidebar: {
       '/html_css/': [
         {
-          title: '测试',
+          title: '前端',
           collapsable: false,
           children: [
-            { title: '测试01', path: '/html_css/1' },
-            { title: '测试02', path: '/html_css/2' }
+            { title: '前端小技巧', path: '/html_css/1' },
+            { title: 'vue', path: '/html_css/2' }
           ]
         }
       ],
+      '/life/':[
+        {
+          title:'生活',
+          collapsable: false,
+          children: [
+            { title: '红米2100路由器刷机', path: '/life/RM2100' },
+          ]
+        }
+     
+
+      ]
     },
     sidebarDepth: 2,
   }
