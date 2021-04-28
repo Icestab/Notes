@@ -1,10 +1,10 @@
 module.exports = {
   head: [
-        [
-            'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
-            { rel: 'icon', href: 'f.ico' }
-        ]
-    ],
+    [
+      'link', // 设置 favicon.ico，注意图片放在 public 文件夹下
+      { rel: 'icon', href: 'f.ico' }
+    ]
+  ],
   title: '个人杂记',
   description: 'Accept what was and what is, and you\'ll more positive energy to pursue what will be.',
   plugins: {
@@ -36,7 +36,7 @@ module.exports = {
         text: '学习',
         items: [
           { text: '前端', link: '/study/html_css_js/html_css' },
-          { text: '文学', link: '/study/literary/1' },
+          { text: '文学', link: '/study/literary/extract' },
           { text: '环境问题', link: '/study/questions/mysql_pass' },
         ]
       }
@@ -48,19 +48,37 @@ module.exports = {
           collapsable: false,
           children: [
             { title: '前端小技巧', path: '/study/html_css_js/html_css' },
-            { title: 'Vue', path: '/study/html_css_js/2' }
+            { title: 'Vue日常笔记', path: '/study/html_css_js/vue1' }
           ]
         }
       ],
-      '/life/':[
+      '/study/literary/': [
         {
-          title:'生活',
+          title: '文学',
+          collapsable: false,
+          children: [
+            { title: '时间语录', path: '/study/literary/extract' },
+          ]
+        }
+      ],
+      '/study/questions/': [
+        {
+          title: '环境问题',
+          collapsable: false,
+          children: [
+            { title: 'Centos7重置Mysql8 root 密码', path: '/study/questions/mysql_pass' },
+          ]
+        }
+      ],
+      '/life/': [
+        {
+          title: '生活',
           collapsable: false,
           children: [
             { title: '红米2100路由器刷机', path: '/life/RM2100' },
           ]
         }
-     
+
 
       ]
     },
