@@ -7,6 +7,15 @@ module.exports = {
   ],
   title: '个人杂记',
   description: 'Accept what was and what is, and you\'ll more positive energy to pursue what will be.',
+  // locales: {
+  //   // 键名是该语言所属的子路径
+  //   // 作为特例，默认语言可以使用 '/' 作为其路径。
+  //   '/': {
+  //     lang: 'zh-CN',
+  //     title: '个人杂记',
+  //     description: 'Accept what was and what is, and you\'ll more positive energy to pursue what will be.',
+  //   }
+  // },
   plugins: {
     '@vuepress/search': {
       search: true, //默认false
@@ -19,7 +28,7 @@ module.exports = {
     //     // 不要忘了安装 moment
     //     const moment = require('moment')
     //     moment.locale(lang)
-    //     return moment(timestamp).fromNow()
+    //     return moment(timestamp).format('LLL')
     //   }
     // }
   },
@@ -27,6 +36,11 @@ module.exports = {
     lineNumbers: true
   },
   themeConfig: {
+    locales: {
+      '/':{
+        lastUpdated: '上次更新',
+      }
+    },
     // 添加导航栏
     nav: [
       { text: '主页', link: '/' },
