@@ -22,15 +22,15 @@ module.exports = {
       searchMaxSuggestions: 10 // 默认是5
     },
     '@vuepress/back-to-top': true,
-    '@vuepress/last-updated':
-    {
-      transformer: (timestamp, lang) => {
-        // 不要忘了安装 moment
-        const moment = require('moment')
-        moment.locale('zh-cn')
-        return moment(timestamp).format('lll')
-      }
-    }
+    '@vuepress/last-updated': true
+    // {
+    //   transformer: (timestamp, lang) => {
+    //     // 不要忘了安装 moment
+    //     const moment = require('moment')
+    //     moment.locale('zh-cn')
+    //     return moment(timestamp).format('lll')
+    //   }
+    // }
   },
   markdown: {
     lineNumbers: true
