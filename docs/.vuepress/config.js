@@ -22,23 +22,23 @@ module.exports = {
       searchMaxSuggestions: 10 // 默认是5
     },
     '@vuepress/back-to-top': true,
-    '@vuepress/last-updated': true
-    // {
-    //   transformer: (timestamp, lang) => {
-    //     // 不要忘了安装 moment
-    //     const moment = require('moment')
-    //     moment.locale(lang)
-    //     return moment(timestamp).format('LLL')
-    //   }
-    // }
+    '@vuepress/last-updated':
+    {
+      transformer: (timestamp, lang) => {
+        // 不要忘了安装 moment
+        const moment = require('moment')
+        moment.locale('zh-cn')
+        return moment(timestamp).format('lll')
+      }
+    }
   },
   markdown: {
     lineNumbers: true
   },
   themeConfig: {
-    repo:'Icestab/Notes',
+    repo: 'Icestab/Notes',
     locales: {
-      '/':{
+      '/': {
         lastUpdated: '上次更新',
       }
     },
@@ -55,7 +55,7 @@ module.exports = {
           { text: '环境问题', link: '/study/questions/mysql_pass' },
         ]
       },
-      {text:'岩夹',link:'http://flysch.cn'}
+      { text: '岩夹', link: 'http://flysch.cn' }
     ],
     sidebar: {
       '/study/html_css_js/': [
