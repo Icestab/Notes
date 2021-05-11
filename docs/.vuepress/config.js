@@ -92,6 +92,7 @@ module.exports = {
           collapsable: false,
           children: [
             { title: '红米2100路由器刷机', path: '/life/RM2100' },
+            { title: '科学上网', path: '/life/ss/vpn' }
           ]
         }
 
