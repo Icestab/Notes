@@ -83,6 +83,7 @@ module.exports = {
           collapsable: false,
           children: [
             { title: 'Centos7重置Mysql8 root 密码', path: '/study/questions/mysql_pass' },
+            { title: 'Linux命令', path: '/study/questions/linux' },
           ]
         }
       ],

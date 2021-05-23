@@ -111,7 +111,7 @@ macOS：[Releases · shadowsocks/ShadowsocksX-NG (github.com)](https://github.co
 
 ### 1.4 SS服务端优化
 
-目前SS可以使用算法加速，我现在使用的是`BBR`加速和`open_fast`,当然还有`kcptun`由于我目前使用已经很流程了，就没有继续折腾了。
+目前SS可以使用算法加速，我现在使用的是`BBR`加速和`open_fast`,当然还有`kcptun`由于我目前使用已经很流畅了，就没有继续折腾了。
 
 开启`open_fast`很简单，第一章就提到了，可以自行返回查看。
 
@@ -119,7 +119,7 @@ Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，
 
 如果不幸你低于这个版本，那么自行百度一下如何升级。
 
-这里我提供一键配置脚本[点击下载](/ss/bbr.sh)，按照提示运行即可。
+这里我提供一键配置bbr脚本[点击下载](/ss/bbr.sh)，按照提示运行即可。
 
 ## 2、VPN
 

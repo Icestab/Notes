@@ -10,3 +10,4 @@
 1. [时间语录](../study/literary/extract)
 ### 环境问题
 1. [Centos7重置Mysql8 root 密码](../study/questions/mysql_pass)
+2. [Linux命令](../study/questions/linux)
