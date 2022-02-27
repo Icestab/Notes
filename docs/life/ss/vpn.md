@@ -118,6 +118,13 @@ macOS：[Releases · shadowsocks/ShadowsocksX-NG (github.com)](https://github.co
 Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上该算法，所有你的机器内核得大于4.9，不过如果你是新装的centos7一般都大于这个版本了。
 
 如果不幸你低于这个版本，那么自行百度一下如何升级。
+开启后，可以用这个命令查看 BBR 状态： 
+
+`sysctl net.ipv4.tcp_available_congestion_control` 
+
+如果返回的结果里有 bbr 则说明你的 VPS 已经开启 BBR 加速： 
+
+`net.ipv4.tcp_available_congestion_control = reno cubic bbr`
 
 这里我提供一键配置bbr脚本[点击下载](/ss/bbr.sh)，按照提示运行即可。
 
