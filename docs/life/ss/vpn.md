@@ -115,9 +115,9 @@ macOS：[Releases · shadowsocks/ShadowsocksX-NG (github.com)](https://github.co
 
 开启`open_fast`很简单，第一章就提到了，可以自行返回查看。
 
-Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上该算法，所有你的机器内核得大于4.9，不过如果你是新装的centos7一般都大于这个版本了。
+Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上该算法，所有你的机器内核得大于4.9。
 
-如果不幸你低于这个版本，那么自行百度一下如何升级。
+如果不幸你低于这个版本，可以参考[Centos7 升级内核版本](https://github.flysch.cn/study/centos7.html)升级。
 开启后，可以用这个命令查看 BBR 状态： 
 
 `sysctl net.ipv4.tcp_available_congestion_control` 

@@ -85,6 +85,7 @@ module.exports = {
             { title: 'Centos7重置Mysql8 root 密码', path: '/study/questions/mysql_pass' },
             { title: 'Linux命令', path: '/study/questions/linux' },
             { title: 'SSH防止暴力破解', path: '/study/questions/ssh' },
+            { title: 'Centos7 升级内核版本', path: '/study/questions/centos7' },
           ]
         }
       ],

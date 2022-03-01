@@ -12,3 +12,4 @@
 1. [Centos7重置Mysql8 root 密码](../study/questions/mysql_pass)
 2. [Linux命令](../study/questions/linux)
 3. [SSH防止暴力破解](../study/questions/ssh)
+4. [Centos7 升级内核版本](../study/questions/centos7)
