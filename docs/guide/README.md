@@ -13,3 +13,5 @@
 2. [Linux命令](../study/questions/linux)
 3. [SSH防止暴力破解](../study/questions/ssh)
 4. [Centos7 升级内核版本](../study/questions/centos7)
+5. [ubuntu-20.04.4-server](../study/questions/ubuntu-20.04.4-server)
+

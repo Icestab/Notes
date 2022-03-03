@@ -78,6 +78,11 @@ module.exports = {
         }
       ],
       '/study/questions/': [
+        // 'mysql_pass',
+        // 'linux',
+        // 'ssh',
+        // 'centos7',
+        // 'ubuntu-20.04.4-server'
         {
           title: '环境问题',
           collapsable: false,
@@ -86,10 +91,13 @@ module.exports = {
             { title: 'Linux命令', path: '/study/questions/linux' },
             { title: 'SSH防止暴力破解', path: '/study/questions/ssh' },
             { title: 'Centos7 升级内核版本', path: '/study/questions/centos7' },
+            { title: 'ubuntu-20.04.4-server安装与基本配置', path: '/study/questions/ubuntu-20.04.4-server' },
           ]
         }
       ],
       '/life/': [
+        // 'RM2100',
+        // 'ss/vpn'
         {
           title: '生活',
           collapsable: false,
@@ -98,8 +106,6 @@ module.exports = {
             { title: '科学上网', path: '/life/ss/vpn' }
           ]
         }
-
-
       ]
     },
     sidebarDepth: 2,

@@ -10,6 +10,6 @@ features:
   details: 记录学习前端途中遇到的困难，和完成的项目。
 - title: 生活杂记
   details: 生活途中有趣的事，折腾一切事物的点点滴滴。
-footer: MIT Licensed | Copyright © 2021-present flysch
+footer: MIT Licensed | Copyright © 2022-present flysch
 
 ---
