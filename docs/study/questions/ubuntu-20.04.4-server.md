@@ -143,4 +143,3 @@ ubuntu@ubuntu:~$ nslookup qq.com
 Server:		114.114.114.114
 Address:	114.114.114.114#53
 ```
-
