@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SSH防止暴力破解 | 个人杂记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/image/f.ico">
+    <meta name="description" content="Accept what was and what is, and you&#39;ll more positive energy to pursue what will be.">
+    
+    <link rel="preload" href="/assets/css/0.styles.e6c88bdc.css" as="style"><link rel="preload" href="/assets/js/app.89e18322.js" as="script"><link rel="preload" href="/assets/js/2.d2f13083.js" as="script"><link rel="preload" href="/assets/js/19.36cea7f8.js" as="script"><link rel="prefetch" href="/assets/js/10.8602cef8.js"><link rel="prefetch" href="/assets/js/11.4cbaa9c7.js"><link rel="prefetch" href="/assets/js/12.d1af1fc4.js"><link rel="prefetch" href="/assets/js/13.d893a8db.js"><link rel="prefetch" href="/assets/js/14.ab7b0dcb.js"><link rel="prefetch" href="/assets/js/15.bc3ac07f.js"><link rel="prefetch" href="/assets/js/16.35901a3c.js"><link rel="prefetch" href="/assets/js/17.13a2daed.js"><link rel="prefetch" href="/assets/js/18.d772b36c.js"><link rel="prefetch" href="/assets/js/3.87687e46.js"><link rel="prefetch" href="/assets/js/4.02fe72af.js"><link rel="prefetch" href="/assets/js/5.e8a26d47.js"><link rel="prefetch" href="/assets/js/6.d6e4b793.js"><link rel="prefetch" href="/assets/js/7.e6dc0f36.js"><link rel="prefetch" href="/assets/js/8.f1286097.js"><link rel="prefetch" href="/assets/js/9.bbcd035a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e6c88bdc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人杂记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/RM2100.html" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/html_css_js/html_css.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/literary/extract.html" class="nav-link">
+  文学
+</a></li><li class="dropdown-item"><!----> <a href="/study/questions/mysql_pass.html" class="nav-link">
+  环境问题
+</a></li></ul></div></div><div class="nav-item"><a href="http://flysch.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  岩夹
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/Icestab/Notes" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/RM2100.html" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/html_css_js/html_css.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/literary/extract.html" class="nav-link">
+  文学
+</a></li><li class="dropdown-item"><!----> <a href="/study/questions/mysql_pass.html" class="nav-link">
+  环境问题
+</a></li></ul></div></div><div class="nav-item"><a href="http://flysch.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  岩夹
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/Icestab/Notes" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>环境问题</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/questions/mysql_pass.html" class="sidebar-link">Centos7重置Mysql8 root 密码</a></li><li><a href="/study/questions/linux.html" class="sidebar-link">Linux命令</a></li><li><a href="/study/questions/ssh.html" aria-current="page" class="active sidebar-link">SSH防止暴力破解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/questions/ssh.html#_1-修改默认端口" class="sidebar-link">1.修改默认端口</a></li><li class="sidebar-sub-header"><a href="/study/questions/ssh.html#_2-使用密钥登录" class="sidebar-link">2.使用密钥登录</a></li><li class="sidebar-sub-header"><a href="/study/questions/ssh.html#_3-禁止root-ssh-启用普通用户" class="sidebar-link">3.禁止root ssh，启用普通用户</a></li><li class="sidebar-sub-header"><a href="/study/questions/ssh.html#_4-云防火墙定期检查" class="sidebar-link">4.云防火墙定期检查</a></li></ul></li><li><a href="/study/questions/centos7.html" class="sidebar-link">Centos7 升级内核版本</a></li><li><a href="/study/questions/ubuntu-20.04.4-server.html" class="sidebar-link">ubuntu-20.04.4-server安装与基本配置</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ssh防止暴力破解"><a href="#ssh防止暴力破解" class="header-anchor">#</a> SSH防止暴力破解</h1> <p>个人购买云服务器后防止被SSH暴力破解，应当做好毕业的安全措施。</p> <h2 id="_1-修改默认端口"><a href="#_1-修改默认端口" class="header-anchor">#</a> 1.修改默认端口</h2> <p>ssh默认22端口，一般暴力扫描都是扫描22端口，所有修改为不常用的端口能有效防止被扫描。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#进入配置文件</span>
+<span class="token function">vim</span> /etc/ssh/sshd_config
+
+<span class="token comment">#找到#Port22，将#去掉并添加端口Port xxx(自己设定)，注意是添加，保留两个端口确保另外一个不能使用的时候还可以用22，测试成功再去掉22</span>
+
+<span class="token comment">#重启ssh服务</span>
+systemctl restart sshd
+
+<span class="token comment">#进入服务器-网络与安全-安全组-配置规则-添加安全组规则，将上面自定义的端口添加进去，如果服务器有开启防火墙的话(建立开启)，必须开放自定义端口</span>
+firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span>xxx/tcp --permanent
+
+<span class="token comment">#重启防火墙</span>
+systemctl restart firewalld.service
+
+<span class="token comment">#测试成功后，只需进入配置文件将Port 22添加注释即可</span>
+<span class="token function">vim</span> /etc/ssh/sshd_config
+<span class="token comment">#Port 22</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="_2-使用密钥登录"><a href="#_2-使用密钥登录" class="header-anchor">#</a> 2.使用密钥登录</h2> <p>禁止密码登录启用密钥登录是防止被暴力破解最有效的手段，一般云服务器都提供了ssh密钥的生成界面，按照参考操作即可。</p> <h2 id="_3-禁止root-ssh-启用普通用户"><a href="#_3-禁止root-ssh-启用普通用户" class="header-anchor">#</a> 3.禁止root ssh，启用普通用户</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#创建普通用户</span>
+<span class="token function">useradd</span> xxx
+passswd xxx
+
+<span class="token comment">#生成登录密钥,为保障安全私钥不建议网络传输，所以生成密钥建议在本机操作，然后通过网络把公钥传输到云主机</span>
+ssh-keygen -N <span class="token string">''</span> -f ~/.ssh/xxxkey_rsa
+
+<span class="token comment">#将上述命令生成的~/.ssh/yolrekey_rsa.pub文件拷贝到服务器，并执行以下命令配置好密钥登录</span>
+<span class="token function">mkdir</span> -p /home/yolre/.ssh
+
+<span class="token function">cat</span> /tmp/xxxkey_rsa.pub <span class="token operator">&gt;&gt;</span> /home/xxx/.ssh/authorized_keys
+
+<span class="token function">chown</span> -R xxx:xxx /home/xxx/.ssh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> <span class="token number">700</span> /home/xxx/.ssh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> <span class="token number">600</span> /home/xxx/.ssh/authorized_keys
+
+<span class="token comment">#使用以下命令登录服务器</span>
+<span class="token function">ssh</span> -i ~/.ssh/xxxkey_rsa -p<span class="token punctuation">[</span>端口号<span class="token punctuation">]</span> xxx@ip
+
+<span class="token comment">#如果可成功登录，则说明密钥登录配置成功，登录成功后可执行 su root切换至root权限进行操作，便可以禁用root登录了</span>
+<span class="token function">vim</span> /etc/ssh/sshd_config
+添加：PermitRootLogin no
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="_4-云防火墙定期检查"><a href="#_4-云防火墙定期检查" class="header-anchor">#</a> 4.云防火墙定期检查</h2> <p>由于个人用户一般不具有固定ip，所以没办法设置ip白名单，不过个人宽带ip虽然定期再变，但是一般处于一个网络段范围。<br>
+建议个人用户仍然设置ip地址段白名单。<br>
+云厂商一般提供防范措施，能够看到有谁再扫描我们服务器，建议定期将这些ip添加到防火墙。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/3/2022, 3:46:14 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/questions/linux.html" class="prev">
+        Linux命令
+      </a></span> <span class="next"><a href="/study/questions/centos7.html">
+        Centos7 升级内核版本
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.89e18322.js" defer></script><script src="/assets/js/2.d2f13083.js" defer></script><script src="/assets/js/19.36cea7f8.js" defer></script>
+  </body>
+</html>
