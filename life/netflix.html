@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Netflix UWP Windows客户端除网络隔离的方法 | 个人杂记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/image/f.ico">
+    <meta name="description" content="Accept what was and what is, and you&#39;ll more positive energy to pursue what will be.">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f84f354.css" as="style"><link rel="preload" href="/assets/js/app.6be9781c.js" as="script"><link rel="preload" href="/assets/js/2.1464d740.js" as="script"><link rel="preload" href="/assets/js/5.2ac59092.js" as="script"><link rel="prefetch" href="/assets/js/10.ca045e6a.js"><link rel="prefetch" href="/assets/js/11.19647cfa.js"><link rel="prefetch" href="/assets/js/12.e32889bd.js"><link rel="prefetch" href="/assets/js/13.4f0b9fa4.js"><link rel="prefetch" href="/assets/js/14.4c84e647.js"><link rel="prefetch" href="/assets/js/15.f6f94967.js"><link rel="prefetch" href="/assets/js/16.6cfa5809.js"><link rel="prefetch" href="/assets/js/17.a7071111.js"><link rel="prefetch" href="/assets/js/18.aa3b11ff.js"><link rel="prefetch" href="/assets/js/19.e48ef060.js"><link rel="prefetch" href="/assets/js/20.3bc6b882.js"><link rel="prefetch" href="/assets/js/21.180f2ff1.js"><link rel="prefetch" href="/assets/js/3.23f3cd7a.js"><link rel="prefetch" href="/assets/js/4.dd096b9f.js"><link rel="prefetch" href="/assets/js/6.8b4ef438.js"><link rel="prefetch" href="/assets/js/7.a284782f.js"><link rel="prefetch" href="/assets/js/8.ffd40feb.js"><link rel="prefetch" href="/assets/js/9.a628ffda.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f84f354.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人杂记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/RM2100.html" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/html_css_js/html_css.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/literary/extract.html" class="nav-link">
+  文学
+</a></li><li class="dropdown-item"><!----> <a href="/study/questions/mysql_pass.html" class="nav-link">
+  环境问题
+</a></li></ul></div></div><div class="nav-item"><a href="http://flysch.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  岩夹
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/Icestab/Notes" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/life/RM2100.html" class="nav-link">
+  生活
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习" class="dropdown-title"><span class="title">学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习" class="mobile-dropdown-title"><span class="title">学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/html_css_js/html_css.html" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/study/literary/extract.html" class="nav-link">
+  文学
+</a></li><li class="dropdown-item"><!----> <a href="/study/questions/mysql_pass.html" class="nav-link">
+  环境问题
+</a></li></ul></div></div><div class="nav-item"><a href="http://flysch.cn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  岩夹
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/Icestab/Notes" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>生活</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/life/RM2100.html" class="sidebar-link">红米2100路由器刷机</a></li><li><a href="/life/ss/vpn.html" class="sidebar-link">科学上网</a></li><li><a href="/life/oh-my-zsh.html" class="sidebar-link">oh-my-zsh安装与基本配置</a></li><li><a href="/life/netflix.html" aria-current="page" class="active sidebar-link">Netflix UWP Windows客户端除网络隔离的方法</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="netflix-uwp-windows客户端除网络隔离的方法"><a href="#netflix-uwp-windows客户端除网络隔离的方法" class="header-anchor">#</a> Netflix UWP Windows客户端除网络隔离的方法</h1> <p><strong>此方式适用于其它内置应用</strong></p> <p>之前一直用edge浏览器观看Netflix，今天突然无法播放，而且尝试了很多办法依然无解。</p> <p>如果不介意清晰度关闭硬件加速的确能够正常播放，不过很明显这不符合我的需求，转变思路后决定使用Netflix UWP客服端，也就是从微软商店下载的。但是下载后无论你的代理软件是全局还是PAC都无法正常使用，原因在于Windows为了某种原因限制了这些软件访问127.0.0.1。</p> <p>Windows 10（同时适用于8、8.1）自带一个CheckNetIsolation.exe程序，通过它可以将指定的程序添加到排除列表，让其内置应用可访问127.0.0.1。</p> <p><strong>实现步骤：</strong></p> <h3 id="_1-找到你要挂代理内置应用的sid"><a href="#_1-找到你要挂代理内置应用的sid" class="header-anchor">#</a> 1.找到你要挂代理内置应用的SID</h3> <p>打开注册列表或者Win键+R打开运行窗口，运行Regedit打开注册表管理器，找到以下注册表项：</p> <p><code>HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</code></p> <p><img src="/assets/img/n1.2ae1e0fd.png" alt="n1"></p> <p>在Mappings项下找到你要挂代理的应用，右边是DisplayName便是应用的名字，左边的便是应用的SID值。</p> <p>右键【重命名】就可以复制应用<code>SID</code>了。</p> <p>如图所示，比如Netflix的SID值是</p> <p><code>S-1-15-2-444797119-353723001-3522112724-563070080-1809981734-922308773-1844997097</code></p> <h3 id="_2-以管理员的身份打开cmd面板"><a href="#_2-以管理员的身份打开cmd面板" class="header-anchor">#</a> 2.以管理员的身份打开CMD面板</h3> <p>输入以下命令：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>CheckNetIsolation.exe loopbackexempt -a -p<span class="token operator">=</span>SID
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>后面的<code>SID</code>即是找到的对应应用的<code>SID</code>值。</p> <p>比如为<code>Netflix</code> <code>UWP</code>进行设置就是输入</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>CheckNetIsolation.exe loopbackexempt -a -p<span class="token operator">=</span>S-1-15-2-444797119-353723001-3522112724-563070080-1809981734-922308773-1844997097
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后按<code>Enter</code>键回车，出现<code>「完成」</code>后就大功告成了。</p> <p><img src="/assets/img/n2.259d6c4e.png" alt="n2"></p> <p><img src="/assets/img/n3.970d7cb7.jpg" alt="n3"></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>附上CheckNetIsolation.exe的三种参数</p> <p>CheckNetIsolation.exe loopbackexempt -s 显示当前列表</p> <p>CheckNetIsolation.exe loopbackexempt -a -p=SID 添加指定程序到列表</p> <p>CheckNetIsolation.exe loopbackexempt -d -p=SID 从列表中删除指定程序</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">3/12/2022, 2:08:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/life/oh-my-zsh.html" class="prev">
+        oh-my-zsh安装与基本配置
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6be9781c.js" defer></script><script src="/assets/js/2.1464d740.js" defer></script><script src="/assets/js/5.2ac59092.js" defer></script>
+  </body>
+</html>
