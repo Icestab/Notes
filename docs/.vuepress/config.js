@@ -104,7 +104,8 @@ module.exports = {
           children: [
             { title: '红米2100路由器刷机', path: '/life/RM2100' },
             { title: '科学上网', path: '/life/ss/vpn' },
-            { title: 'oh-my-zsh安装与基本配置', path: '/life/oh-my-zsh' }
+            { title: 'oh-my-zsh安装与基本配置', path: '/life/oh-my-zsh' },
+            { title: 'Netflix UWP Windows客户端除网络隔离的方法', path: '/life/netflix' }
           ]
         }
       ]

@@ -3,6 +3,7 @@
 1. [红米(小米)AC2100无需Telnet刷入Breed和Padavan固件教程](../life/RM2100)
 2. [科学上网](../life/ss/vpn)
 3. [oh-my-zsh](../life/oh-my-zsh)
+4. [Netflix UWP Windows客户端除网络隔离的方法](../life/netflix)
 
 ### 前端
 1. [前端小技巧](../study/html_css_js/html_css)
